@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>works</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./stylesheets/nav.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <div class="allMenu">
+      <ul class="ul">
+        <li class="lia"><a href="#" class="li">Home</a></li>
+        <li class="lia"><a href="#" class="li">Info</a></li>
+        <li class="lia"><a href="#" class="li">Portfolio</a></li>
+        <li class="lia"><a href="#" class="li">The Team</a></li>
+      </ul>
+      <div class="Menu2">
+        <svg version="1.1" id="menulogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="36px" viewBox="0 0 40 36" enable-background="new 0 0 40 40" xml:space="preserve">
+          <rect class="rect1" fill="#FFF" width="40" height="5.392" />
+          <rect class="rect2" x="0" y="12" fill="#FFF" width="40" height="5.393" />
+          <rect class="rect3" x="0" y="24" fill="#FFF" width="40" height="5.393" />
+        </svg>
+        <div class="Menu"></div>
+      </div>
+    </div>
+    <section id="home" data-type="background" data-speed="10">
+      <div id="graph"></div>
+      <script src = "./javascript/graph_controller.js"></script>
+    </section>
+    <script>
+      $(document).ready(function () {
+        var menu = $(".Menu");
+        $("#menulogo").click(function () {
+          if (menu.hasClass("hover")) {
+            menu.removeClass("hover");
+            $(".rect1").css("opacity", "1");
+            $(".rect2").css("transform", "rotate(0deg) translate(0px, 0px)");
+            $(".rect3").css("transform", "rotate(0deg) translate(0px, 0px)");
+            $("#menulogo").css("margin-top", "25px");
+            $(".ul").css("margin-top", "-100px");
+          } else {
+            menu.addClass("hover");
+            $(".rect1").css("opacity", "0");
+            $(".rect2").css("transform", "rotate(45deg) translate(6px, -15px)");
+            $(".rect3").css("transform", "rotate(-45deg) translate(-20px, 0px)");
+            $(".ul").css("margin-top", "0px");
+            $("#menulogo").css("margin-top", "35px");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
