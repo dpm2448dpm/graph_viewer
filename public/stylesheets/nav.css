@@ -138,6 +138,8 @@ body {
   margin-top: 25px;
 }
 #menulogo:hover {
+  transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
   -webkit-transform: scale(1.1, 1.1);
 }
 #menulogo:hover {
@@ -147,7 +149,7 @@ body {
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: #f8d255;
+  background-color: #f5e9db;
   top: 0px;
   left: 0px;
   z-index: -1;

@@ -6,6 +6,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var multer= require('multer');
 
+var loadData = require('./routes/loadData');
 var indexRouter = require('./routes/index');
 var grafo = require('./routes/grafo');
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/viewer', grafo);
+app.use('/loadData', loadData);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
